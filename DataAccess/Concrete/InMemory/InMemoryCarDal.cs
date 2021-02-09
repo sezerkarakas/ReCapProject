@@ -1,5 +1,6 @@
 ﻿using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,11 +16,11 @@ namespace DataAccess.Concrete.InMemory
         {
             _cars = new List<Car>
             {
-                new Car{CarId=1, Brand="Eagle", BrandId=1, ColorName="White", ColorId=1, DailyPrice=20000, ModelYear=1994, Description="It is looking like an eagle."},
-                new Car{CarId=2, Brand="Hawk", BrandId=2, ColorName="Red", ColorId=2, DailyPrice=25000, ModelYear=1990, Description="It is looking like a hawk."},
-                new Car{CarId=3, Brand="Falcon", BrandId=3, ColorName="Blue", ColorId=3, DailyPrice=22500, ModelYear=1993, Description="It is looking like a falcon."},
-                new Car{CarId=4, Brand="Anatolia", BrandId=4, ColorName="White", ColorId=1, DailyPrice=30000, ModelYear=1976, Description="It is from Anatolia."},
-                new Car{CarId=5, Brand="Femrari", BrandId=5, ColorName="White", ColorId=1, DailyPrice=1000, ModelYear=2010, Description="It is a cheap car."},
+                new Car{CarId=1,BrandId=1, ColorId=1, DailyPrice=20000, ModelYear=1994, Description="It is looking like an eagle."},
+                new Car{CarId=2, BrandId=2, ColorId=2, DailyPrice=25000, ModelYear=1990, Description="It is looking like a hawk."},
+                new Car{CarId=3, BrandId=3, ColorId=3, DailyPrice=22500, ModelYear=1993, Description="It is looking like a falcon."},
+                new Car{CarId=4, BrandId=4, ColorId=1, DailyPrice=30000, ModelYear=1976, Description="It is from Anatolia."},
+                new Car{CarId=5, BrandId=5, ColorId=1, DailyPrice=1000, ModelYear=2010, Description="It is a cheap car."},
 
             };
         }
@@ -55,13 +56,16 @@ namespace DataAccess.Concrete.InMemory
             return _cars.Where(c => c.CarId == carId).ToList();
         }
 
+        public List<CarDetailDto> GetCarDetails()
+        {
+            throw new NotImplementedException();
+        }
+
         public void Update(Car car)
         {
-            Car carToUpdate = _cars.SingleOrDefault(c => c.CarId == car.CarId);
-            carToUpdate.Brand = car.Brand;
+            Car carToUpdate = _cars.SingleOrDefault(c => c.CarId == car.CarId);            
             carToUpdate.BrandId = car.BrandId;
             carToUpdate.ColorId = car.ColorId;
-            carToUpdate.ColorName = car.ColorName;
             carToUpdate.DailyPrice = car.DailyPrice;
             carToUpdate.Description = car.Description;
         }
