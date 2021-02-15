@@ -17,5 +17,6 @@ namespace Core.Utilities
 
         public T Data { get; }
 
+
     }
 }
