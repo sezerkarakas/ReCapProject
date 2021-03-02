@@ -45,6 +45,8 @@ namespace Business.Constants
         public static string RentalUpdated = "Rent date updated";
         public static string RentalListed = "Rented cars listed";
 
+        public static string CarImageLimitExceeded = "You've reached the photo limit you cannot go further!";
 
+        public static string CarImageIsNotExists { get; internal set; }
     }
 }
