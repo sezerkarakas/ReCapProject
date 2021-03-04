@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Text;
 
 namespace Business.Constants
@@ -48,5 +49,6 @@ namespace Business.Constants
         public static string CarImageLimitExceeded = "You've reached the photo limit you cannot go further!";
 
         public static string CarImageIsNotExists { get; internal set; }
+        public static string AuthorizationDenied { get; internal set; }
     }
 }
