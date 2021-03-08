@@ -2,7 +2,7 @@
 using Business.Constants;
 using Business.ValidationRules.FluentValidation;
 using Core.Aspects.Autofac.Validation;
-using Core.Concrete;
+using Core.Entities.Concrete;
 using Core.Utilities;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
